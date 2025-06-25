@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fashion Designer Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+.show { opacity: 1; transform: translateY(0px); }
+</style>
+</head>
+<body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans">
+
+<!-- Navbar -->
+<nav class="fixed w-full bg-white dark:bg-gray-800 shadow z-10">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <a href="#" class="font-bold text-xl">Designer Name</a>
+    <div class="space-x-6 hidden md:flex">
+      <a href="#home" class="hover:text-pink-500">Home</a>
+      <a href="#about" class="hover:text-pink-500">About</a>
+      <a href="#portfolio" class="hover:text-pink-500">Portfolio</a>
+      <a href="#services" class="hover:text-pink-500">Services</a>
+      <a href="#testimonials" class="hover:text-pink-500">Testimonials</a>
+      <a href="#contact" class="hover:text-pink-500">Contact</a>
+    </div>
+    <button id="theme-toggle" class="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700">
+      🌙
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="h-screen flex flex-col justify-center items-center text-center fade-in">
+  <h1 class="text-5xl font-bold">Modern, Chic, Timeless Designs</h1>
+  <p class="mt-4 text-gray-600 dark:text-gray-400">Elevating fashion through craftsmanship and timeless beauty</p>
+  <a href="#portfolio" class="mt-6 inline-block bg-pink-500 text-white py-3 px-8 rounded hover:bg-pink-600">View My Work</a>
+</section>
+
+<!-- About Section -->
+<section id="about" class="max-w-5xl mx-auto p-8 fade-in">
+  <h2 class="text-3xl font-bold text-center">About the Designer</h2>
+  <p class="mt-4 text-gray-600 dark:text-gray-400 text-center">With over a decade of experience in haute couture and ready-to-wear collections, I focus on quality craftsmanship and elegant design that tell a story. My work has been featured in prestigious fashion shows and magazines globally.</p>
+</section>
+
+<!-- Portfolio Section -->
+<section id="portfolio" class="max-w-7xl mx-auto p-8 fade-in">
+  <h2 class="text-3xl font-bold text-center">Portfolio</h2>
+  <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <img src="https://via.placeholder.com/600x800" alt="Design 1" class="rounded hover:scale-105 transition-transform">
+    <img src="https://via.placeholder.com/600x800" alt="Design 2" class="rounded hover:scale-105 transition-transform">
+    <img src="https://via.placeholder.com/600x800" alt="Design 3" class="rounded hover:scale-105 transition-transform">
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="max-w-5xl mx-auto p-8 fade-in">
+  <h2 class="text-3xl font-bold text-center">Services</h2>
+  <div class="mt-6 grid sm:grid-cols-3 gap-6">
+    <div class="bg-white dark:bg-gray-800 p-4 rounded hover:shadow-lg">
+      <h3 class="font-bold text-xl">Custom Design</h3>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">Personalized fashion design tailored exclusively for you.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-4 rounded hover:shadow-lg">
+      <h3 class="font-bold text-xl">Bridal Wear</h3>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">Exquisite and timeless pieces for your special day.</p>
+    </div>
+    <div class="bg-white dark:bg-gray-800 p-4 rounded hover:shadow-lg">
+      <h3 class="font-bold text-xl">Fashion Consultations</h3>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">Guidance to help you find and define your unique style.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="max-w-5xl mx-auto p-8 fade-in">
+  <h2 class="text-3xl font-bold text-center">What Clients Say</h2>
+  <div class="mt-6 space-y-4">
+    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded">
+      <p class="text-gray-600 dark:text-gray-400">“An amazing designer who captured exactly what I envisioned for my special day!”</p>
+      <span class="font-bold">– Client A</span>
+    </div>
+    <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded">
+      <p class="text-gray-600 dark:text-gray-400">“Modern, elegant, and timeless – highly recommend for custom designs!”</p>
+      <span class="font-bold">– Client B</span>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="max-w-5xl mx-auto p-8 fade-in">
+  <h2 class="text-3xl font-bold text-center">Contact</h2>
+  <form class="mt-4 space-y-4 max-w-xl mx-auto">
+    <input class="w-full p-3 rounded border dark:border-gray-600" type="text" placeholder="Your Name">
+    <input class="w-full p-3 rounded border dark:border-gray-600" type="email" placeholder="Your Email">
+    <textarea class="w-full p-3 rounded border dark:border-gray-600" placeholder="Your Message"></textarea>
+    <button class="bg-pink-500 text-white py-3 rounded w-full hover:bg-pink-600">Send Message</button>
+  </form>
+</section>
+
+<!-- Scripts for Dark Mode & Fade-In Animations -->
+<script>
+  const themeBtn = document.getElementById("theme-toggle");
+  themeBtn.addEventListener("click", () => {
+    document.documentElement.classList.toggle("dark");
+    themeBtn.textContent = document.documentElement.classList.contains("dark") ? "☀️" : "🌙";
+  });
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('show');
+    });
+  }, { threshold: 0.1 });
+  fadeElements.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
